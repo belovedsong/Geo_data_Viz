@@ -1,3 +1,13 @@
+'''
+Jessica Song
+
+As part of the data exploration regarding geographic data,
+manipulate and process the data saved in a dataframe to get 
+the desired visualized result and plot those data on the 
+interactive folium map and save it as .html file.
+
+'''
+
 # Visualization Libraries
 import folium
 from folium import plugins
@@ -17,7 +27,7 @@ pop = pd.read_csv("../data/pop.csv")
 pop = pop.drop('Unnamed: 0', axis=1)
 
 withpop = pd.merge(geo,pop[['kcube_id','pop']], on='kcube_id', how='left')
-withpop['pop'] = withpop['pop'].fillna(withpop['pop'].mean()) # need to think more
+withpop['pop'] = withpop['pop'].fillna(withpop['pop'].mean())
 
 result.dropna(subset=['kcube_id'], how='all', inplace = True)
 result['kcube_id'] = pd.to_numeric(result['kcube_id'], errors='coerce')
@@ -25,7 +35,7 @@ df = pd.merge(result, withpop, on='kcube_id', how='right')
 
 
 
-
+# Data processing
 # Find the area that pc occurs the most
   
 # Create a binary column 'pc'
