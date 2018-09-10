@@ -1,3 +1,13 @@
+'''
+Jessica Song
+
+Use Google Map API to get latitude and longitude of each given address
+and match it with the existing address or identification code.
+Save the result as a csv file.
+
+'''
+
+
 # Getting lat, long info from Google Map API
 with open('data/kcube_geo_info.pkl', 'rb') as handle:
     kcube = pickle.load(handle)
